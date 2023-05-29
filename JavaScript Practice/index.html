@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <body>
+    
+        <div class="container" id="blured">
+            <div class="wrapper1">
+                <div class="icon1">
+                    <i class="fa-solid fa-chevron-right fa-xs" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-user fa-xl contact" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-radio fa-xl" style="color: #ffffff;"></i>
+                </div>
+            </div>
+    
+            <div class="wrapper2">
+                <div class="row1">
+                    <i class="fa-solid fa-address-book fa-2xl" style="color: #FF5050;"></i>
+                    <div class="subrw1">
+                        <h1 class="tt1">Contacts</h1>
+                        <h1 class="tt2">Welcome to FirstCRM contact page</h1>
+                    </div>
+                </div>
+    
+                <div class="row2">
+                    <div class="subrw2">
+                        <div class="text">
+                            <input class="name" type="text" id="fname" name="fname" value="Search from contacts" placeholder="Search from contacts">
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000;"></i></button>
+                        </div>
+                        <div class="btns">
+                            <button class="btn1" type="submit" onclick = "openPopup();">+ Add Contacts</i></button>
+                            <button class="btn1" type="submit">+ Add Contacts</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="details">
+              <h3>Please enter Details</h3>
+              <button onclick = "closePopup();">
+                <i class="fa-solid fa-xmark fa-lg" style="color: #d9dfe7"></i>
+              </button>
+            </div>
+      
+            <div class="forms">
+              <form action="" name="detform">
+                <table>
+                  <tr>
+                    <td>Name</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="ip" name="fname" type="text" value="" required />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="ip" name="email" type="email" value="" required />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Phone</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="ip"
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                        value=""
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Company</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="ip" type="text" name="cname" value="" required />
+                    </td>
+                  </tr>
+                  <tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <body>
+    
+        <div class="container" id="blured">
+            <div class="wrapper1">
+                <div class="icon1">
+                    <i class="fa-solid fa-chevron-right fa-xs" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-user fa-xl contact" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-radio fa-xl" style="color: #ffffff;"></i>
+                </div>
+            </div>
+    
+            <div class="wrapper2">
+                <div class="row1">
+                    <i class="fa-solid fa-address-book fa-2xl" style="color: #FF5050;"></i>
+                    <div class="subrw1">
+                        <h1 class="tt1">Contacts</h1>
+                        <h1 class="tt2">Welcome to FirstCRM contact page</h1>
+                    </div>
+                </div>
+    
+                <div class="row2">
+                    <div class="subrw2">
+                        <div class="text">
+                            <input class="name" type="text" id="fname" name="fname" value="Search from contacts" placeholder="Search from contacts">
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000;"></i></button>
+                        </div>
+                        <div class="btns">
+                            <button class="btn1" type="submit" onclick = "openPopup();">+ Add Contacts</i></button>
+                            <button class="btn1" type="submit">+ Add Contacts</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="details">
+              <h3>Please enter Details</h3>
+              <button onclick = "closePopup();">
+                <i class="fa-solid fa-xmark fa-lg" style="color: #d9dfe7"></i>
+              </button>
+            </div>
+      
+            <div class="forms">
+              <form action="" name="detform">
+                <table>
+                  <tr>
+                    <td>Name</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="ip" name="fname" type="text" value="" required />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="ip" name="email" type="email" value="" required />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Phone</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="ip"
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                        value=""
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Company</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input class="ip" type="text" name="cname" value="" required />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="ip"
+                        type="text"
+                        name="address"
+                        value=""
+                        required
+                      />
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </div>
+      
+            <div class="sub">
+              <button type="submit">Submit</button>
+            </div>
+      
+          </div>
+        
+        <script src="javascript.js"></script>
+    </body>
+</body>
+</html>
