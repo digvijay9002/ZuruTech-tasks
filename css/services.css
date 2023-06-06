@@ -580,24 +580,25 @@ ul {
 }
 
 .ft-container {
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-top: 320px;
-  padding-bottom: 120px;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 1199px;
+
+  padding-bottom: 134px;
 }
+
 .ft-main {
-  padding-left: 20%;
-  padding-right: 20%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  gap: 35px;
+  gap: 101px;
   justify-content: space-between;
 }
 
 .ft-logo {
-  width: 220px !important;
-  height: auto !important;
+  width: 177px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -605,6 +606,8 @@ ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  width: 393px;
+  flex-shrink: 0;
 }
 
 .sub-links a {
@@ -615,15 +618,34 @@ ul {
 .company-description {
   padding-top: 25px;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  font-size: 18px;
-  font-weight: 400;
-  color: #4d5053;
   font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  /* or 33px */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.01em;
+
+  color: #4d5053;
 }
 
 .ft-main-item h2 {
+  color: #292f36;
+}
+.footer-heading {
+  font-family: "DM Serif Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 125%;
+  padding-bottom: 9px;
+  /* or 31px */
+
+  display: flex;
+  align-items: center;
+
   color: #292f36;
 }
 .sub-links {
@@ -642,17 +664,15 @@ ul {
   align-items: center;
   justify-content: left;
   gap: 55px;
-  width: 70%;
+
   padding-top: 25px;
 }
 
 .social-icon {
-  width: 0.8em;
-  min-width: 0.8em;
-  height: 14px;
+  width: 100%;
 }
 .ft-company-logo {
-  width: 200px;
+  width: 177px;
 }
 
 .ft-copyright {
@@ -673,7 +693,8 @@ ul {
 .mobile-footer {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 101px;
+  flex: auto;
 }
 
 .map-frame {
@@ -838,6 +859,12 @@ ul {
     gap: 5px;
     padding: 0em 3em 3em 3em;
   }
+  .footer-heading {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
   .btn-div {
     display: flex;
     justify-content: center;
@@ -976,18 +1003,19 @@ ul {
     padding: 20px;
   }
   .ft-container {
-    margin-left: 2%;
-    margin-right: 2%;
-    padding-top: 220px;
-    padding-bottom: 120px;
-  }
+    width: 100% !important;
+    display: flex;
 
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
   .company-details {
     align-items: center;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    width: 100%;
   }
 
   .heading-form {
@@ -1109,7 +1137,7 @@ ul {
 
   .sub-links a {
     padding-top: 30px;
-    font-size: 16px;
+    font-size: 14px;
     color: #292f36;
   }
   .sub-links {
@@ -1137,6 +1165,8 @@ ul {
     justify-content: center;
   }
   .company-description {
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 25px;
     display: flex;
     flex-wrap: wrap;
@@ -1153,6 +1183,7 @@ ul {
   }
 
   .mobile-footer {
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     gap: 5px;

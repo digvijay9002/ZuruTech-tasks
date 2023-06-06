@@ -54,6 +54,7 @@
               placeholder="Search"
               class="contact-search"
               id="contact-search"
+              onkeyup="searchData()"
             />
             <i class="fa fa-magnifying-glass"></i>
           </div>
@@ -75,20 +76,23 @@
                 </div>
 
                 <div class="main-form">
-                  <form>
-                    <label for="Name"> Name </label>
+                  <form action="javascript:void(0);">
+                    <label for="Name" > Name </label>
                     <br />
                     <input type="text" class="name" id="name" />
+                    <span id="validate-name"></span>
                     <br />
 
-                    <label for="Name"> Email </label>
+                    <label for="Email"> Email </label>
                     <br />
                     <input type="email" class="email" id="email" />
+                    <span id="validate-email"></span>
                     <br />
 
                     <label for="Phone"> Phone</label>
                     <br />
                     <input type="number" class="phone" id="phone" />
+                    <span id="validate-phone"></span>
                     <br />
 
                     <label for="Company"> Company</label>
@@ -103,9 +107,10 @@
 
                     <div class="form-footer">
                       <button
+                      type="submit"
                         class="submit-btn"
                         id="Submit"
-                        onclick="AddData()"
+                        onclick="validateForm()"
                       >
                         Submit
                       </button>
@@ -137,15 +142,57 @@
                   </th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Phone</th>
+                  <!-- <th>Phone</th>
                   <th>Company</th>
-                  <th>Address</th>
+                  <th>Address</th> -->
                 </tr>
               </thead>
               <tbody></tbody>
             </table>
           </div>
-          <div class="info-table"></div>
+          <div class="info-table" id="additional-details">
+            <div class="info-table-heading">
+                <div class="arrow-back">
+                  <button><img src="./image/arrow_back.svg" class="arrow-btn" onclick="closeDetails()"></button>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center  ;">
+                  <span class="test-2" id="test-2"> </span>
+                  <span id="actor-name">
+
+                  </span>
+                </div>
+                <div class="arrow-back">
+                  <button><img src="./image/edit.svg" class="arrow-btn" onclick="enableField()"></button>
+                </div>
+          </div>
+
+          <div class="selected-contact">
+            <div class="selected-contact-div"> 
+               <label class="label"> Full Name:</label> <input type="text" class="sName" id="sName" disabled>
+              </div>
+
+              <div class="selected-contact-div"> 
+                <label class="label"> Email:</label> <input type="text" class="sName" id="sEmail" disabled>
+               </div>
+
+               <div class="selected-contact-div"> 
+                <label class="label"> Phone:</label> <input type="text" class="sName" id="sPhone" disabled>
+               </div>
+
+               <div class="selected-contact-div"> 
+                <label class="label"> Company:</label> <input type="text" class="sName" id="sCompany" disabled>
+               </div>
+
+
+               <div class="selected-contact-div"> 
+                <label class="label"> Address:</label> <input type="text" class="sName" id="sAddress" disabled>
+               </div>
+           
+            <button class="save-data" onclick="updateData()" id="update-btn"> Save </button>
+            <button class="cancel-btn" onclick="cancel()" id="cancel-btn"> Cancel </button>
+            
+
+          </div>
         </div>
       </div>
     </div>

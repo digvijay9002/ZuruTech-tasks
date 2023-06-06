@@ -1,3 +1,5 @@
+let lastClicked = undefined;
+
 let modal = document.getElementById("myModal");
 
 let btn = document.getElementById("add-btn");
@@ -20,28 +22,36 @@ window.onclick = function (event) {
 };
 
 function validateForm() {
+  let validate = true;
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
   let phone = document.getElementById("phone").value;
   let company = document.getElementById("company").value;
   let address = document.getElementById("address").value;
 
-  if (name == "") {
-    alert("Name is required");
-    return false;
+  if (name.length <= 2) {
+    document.getElementById("validate-name").innerHTML =
+      "*Please Enter a Valid user name";
+
+    validate = false;
   }
 
-  if (age == "") {
-    alert("Email is required");
-    return false;
+  if (phone.length < 10 || phone.length > 10) {
+    document.getElementById("validate-phone").innerHTML =
+      "*Please Enter a Valid Phone Number";
+
+    validate = false;
   }
 
-  if (phone > 10) {
-    alert("Minimum phone number required is 10");
-    return false;
-  }
+  var regex = /[^\s@]+@[^\s@]+\.[^\s@]+/;
+  if (regex.test(email)) {
+    return 1;
+  } else {
+    document.getElementById("validate-email").innerHTML =
+      "*Please Enter a Valid Email";
 
-  return true;
+    validate = false;
+  }
 }
 
 function showData() {
@@ -72,10 +82,12 @@ function showData() {
   ];
 
   peopleList.forEach(function (element, index) {
-    html += "<tr>";
+    html += "<tr id='contact-" + index + "' class='clk-effect'>";
     html += '<td> <input type="checkbox" id="' + index + '"></td>';
     html +=
-      "<td> <div class='Inline'><div class='test1' style='background-color:" +
+      "<td> <div class='Inline'><div class='test1' id='random-color-" +
+      index +
+      "' style='background-color:" +
       colors[Math.floor(Math.random() * colors.length)] +
       "'>" +
       getInitials(element.name) +
@@ -83,33 +95,24 @@ function showData() {
       element.name +
       "</div></td>";
     html += "<td> <div class='Inline'>" + element.email + "</div></td>";
-    html += "<td> <div class='Inline'>" + element.phone + "</div></td>";
-    html += "<td><div class='Inline'>" + element.company + "</div></td>";
-    html += "<td><div class='Inline'>" + element.address + "</div></td>";
-    // var random_color = colors[Math.floor(Math.random() * colors.length)];
-    // document.getElementById("color-" + index).style.backgroundColor = random_color;
 
-    // html +=
-    //   '<td><button onclick="deleteData(' +
-    //   index +
-    //   ')" class="btn btn-danger">Delete</button></td>';
     html += "</tr>";
   });
 
   document.querySelector("#main-table tbody").innerHTML = html;
+
+  peopleList.forEach(function (element, index) {
+    document
+      .getElementById("contact-" + index)
+      .addEventListener("click", () => {
+        sDetails(index);
+      });
+  });
 }
 
-// For showing the  main table
+// Selective Data Function
 
-document.onload = showData();
-
-function AddData() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var phone = document.getElementById("phone").value;
-  var company = document.getElementById("company").value;
-  var address = document.getElementById("address").value;
-
+function sDetails(index) {
   var peopleList;
 
   if (localStorage.getItem("peopleList") == null) {
@@ -118,24 +121,65 @@ function AddData() {
     peopleList = JSON.parse(localStorage.getItem("peopleList"));
   }
 
-  peopleList.push({
-    name: name,
-    email: email,
-    phone: phone,
-    company: company,
-    address: address,
-  });
+  document.getElementById("sName").value = peopleList[index].name;
+  document.getElementById("sEmail").value = peopleList[index].email;
+  document.getElementById("sPhone").value = peopleList[index].phone;
+  document.getElementById("sCompany").value = peopleList[index].company;
+  document.getElementById("sAddress").value = peopleList[index].address;
 
-  localStorage.setItem("peopleList", JSON.stringify(peopleList));
-  showData();
+  lastClicked = index;
 
-  document.getElementById("name").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("phone").value = "";
-  document.getElementById("company").value = "";
-  document.getElementById("address").value = "";
+  document.getElementById("additional-details").style.display = "block";
+
+  document.getElementById("test-2").innerHTML = getInitials(
+    peopleList[index].name
+  );
+
+  document.getElementById("actor-name").innerHTML = peopleList[index].name;
+
+  document.getElementById("test-2").style.backgroundColor =
+    document.getElementById("random-color-" + index).style.backgroundColor;
+  console.log(getInitials(peopleList[index].name));
 }
 
+// For showing the  main table
+
+document.onload = showData();
+
+function AddData() {
+  if (validateForm()) {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var company = document.getElementById("company").value;
+    var address = document.getElementById("address").value;
+
+    var peopleList;
+
+    if (localStorage.getItem("peopleList") == null) {
+      peopleList = [];
+    } else {
+      peopleList = JSON.parse(localStorage.getItem("peopleList"));
+    }
+
+    peopleList.push({
+      name: name,
+      email: email,
+      phone: phone,
+      company: company,
+      address: address,
+    });
+
+    localStorage.setItem("peopleList", JSON.stringify(peopleList));
+    showData();
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("company").value = "";
+    document.getElementById("address").value = "";
+  }
+}
 function getInitials(name) {
   var parts = name.split(" ");
   var initials = "";
@@ -206,4 +250,86 @@ function selectAll() {
       document.getElementById(key).checked = false;
     }
   }
+}
+
+//For enabling the text area
+
+function enableField() {
+  document.getElementById("sName").disabled = false;
+  document.getElementById("sEmail").disabled = false;
+  document.getElementById("sPhone").disabled = false;
+  document.getElementById("sCompany").disabled = false;
+  document.getElementById("sAddress").disabled = false;
+
+  document.getElementById("update-btn").style.display = "flex";
+  document.getElementById("cancel-btn").style.display = "flex";
+}
+
+var updateData = () => {
+  let peopleList;
+  if (localStorage.getItem("peopleList") == null) {
+    peopleList = [];
+  } else {
+    peopleList = JSON.parse(localStorage.getItem("peopleList"));
+  }
+
+  peopleList[lastClicked].name = document.getElementById("sName").value;
+  peopleList[lastClicked].email = document.getElementById("sEmail").value;
+  peopleList[lastClicked].phone = document.getElementById("sPhone").value;
+  peopleList[lastClicked].company = document.getElementById("sCompany").value;
+  peopleList[lastClicked].address = document.getElementById("sAddress").value;
+
+  localStorage.setItem("peopleList", JSON.stringify(peopleList));
+
+  showData();
+  cancel();
+};
+
+function cancel() {
+  document.getElementById("sName").disabled = true;
+  document.getElementById("sEmail").disabled = true;
+  document.getElementById("sPhone").disabled = true;
+  document.getElementById("sCompany").disabled = true;
+  document.getElementById("sAddress").disabled = true;
+
+  document.getElementById("update-btn").style.display = "none";
+  document.getElementById("cancel-btn").style.display = "none";
+}
+
+function searchData() {
+  let peopleList;
+  if (localStorage.getItem("peopleList") == null) {
+    peopleList = [];
+  } else {
+    peopleList = JSON.parse(localStorage.getItem("peopleList"));
+  }
+
+  for (const index in peopleList) {
+    let str = document.getElementById("contact-search").value.toLowerCase();
+
+    // console.log(peopleList[index].name);
+    // console.log(peopleList[index].name.toLowerCase());
+    // console.log(peopleList[index].name.toLowerCase().includes(str));
+
+    if (
+      peopleList[index].name.toLowerCase().includes(str) ||
+      peopleList[index].email.toLowerCase().includes(str) ||
+      peopleList[index].phone.toLowerCase().includes(str) ||
+      peopleList[index].company.toLowerCase().includes(str) ||
+      peopleList[index].address.toLowerCase().includes(str)
+    ) {
+      document.getElementById("contact-" + index).style.display = "table-row";
+      // console.log(peopleList[index].name);
+    } else {
+      document.getElementById("contact-" + index).style.display = "none";
+    }
+  }
+}
+
+function closeDetails() {
+  document.getElementById("additional-details").style.display = "none";
+}
+
+function visibleDetails() {
+  document.getElementById("additional-details").style.display = "none";
 }

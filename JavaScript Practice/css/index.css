@@ -12,7 +12,7 @@
   flex-direction: column;
   width: 80px;
   min-width: 40px;
-  height: 100vh;
+
   align-items: center;
   background-image: linear-gradient(#ff5050, #ff3399);
   box-shadow: 3px 3px 10px -4px black;
@@ -60,7 +60,7 @@
 
 .main-div {
   margin-top: 5%;
-  margin-left: 10%;
+  margin-left: 5%;
   width: 60%;
   background-color: gainsboro;
   display: flex;
@@ -70,6 +70,11 @@
   justify-content: center;
   align-items: center;
   box-shadow: 4px 3px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+#actor-name {
+  font-family: "Poppins";
+  font-size: 22px;
 }
 .contact-search {
   border: none;
@@ -117,6 +122,11 @@
   box-shadow: 4px 3px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
+.main-form span {
+  color: red;
+  font-family: "Poppins";
+  font-size: 12px;
+}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -158,6 +168,7 @@
 }
 .content1 {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
 }
@@ -219,17 +230,96 @@
 }
 
 .contact-table-div {
+  font-family: "Poppins";
+  font-size: 14px;
   margin-top: 3rem;
   margin-left: 5%;
-  width: 60em;
+  margin-right: 5%;
+  width: auto;
   padding: 20px;
   background-color: #fefefe;
   box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.2);
 }
 .info-table {
-  background-color: #ff3399;
+  background-color: gainsboro;
+  margin-top: 3rem;
+  margin-left: 2%;
+  padding-bottom: 3rem;
+  margin-left: 5%;
+  margin-right: auto;
+  box-shadow: 4px 1px 4px 4px rgb(211, 207, 207);
+}
+.info-table-heading {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.arrow-btn {
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+}
+.arrow-back button {
+  border: none;
+  border-radius: 50px;
+}
+
+.selected-contact input {
+  width: auto;
+  word-wrap: normal;
+  background-color: transparent;
+  border: none;
+}
+
+.selected-contact input:focus {
+  outline: none;
+}
+.selected-contact-div {
+  font-family: "Poppins";
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  height: 3rem;
+  margin-right: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  gap: 30px;
+  justify-content: left;
+  box-shadow: 3px 1px 2px 2px rgb(211, 207, 207);
+}
+.clk-effect:hover {
+  background-color: whitesmoke;
+}
+
+.clk-effect {
+  word-break: break-word;
+}
+#additional-details {
+  display: none;
+}
+
+.save-data {
+  display: none;
+}
+
+.cancel-btn {
+  display: none;
 }
 @media screen and (max-width: 1584px) {
+  .table-div {
+    flex-direction: column;
+  }
+
+  .info-table {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
   .main-div {
     width: auto;
     margin-left: 5%;
@@ -273,16 +363,84 @@
 .test1 {
   /* background-color: red !important; */
   border-radius: 50%;
-  min-width: 50px;
-  min-height: 50px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.test-2 {
+  /* background-color: red !important; */
+
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
 }
 .Inline {
   display: flex;
   align-items: center;
   gap: 5px;
   height: 50px;
-  width: 9rem;
+  width: auto;
+}
+
+.label {
+  width: 85px;
+}
+
+.table > tbody {
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 620px) {
+  .contact-table-div {
+    font-size: 10px;
+    padding: 12px;
+    display: flex;
+  }
+
+  .info-table-heading {
+    gap: 30px;
+  }
+  .search-box {
+    width: 10em;
+  }
+
+  .contact-search {
+    width: 7em;
+    height: 2em;
+  }
+  .test1 {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+  }
+
+  .Inline {
+    height: 35px;
+  }
+  .test-2 {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+  }
+
+  #actor-name {
+    font-size: 14px;
+    text-align: center;
+  }
 }
