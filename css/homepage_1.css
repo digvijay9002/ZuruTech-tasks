@@ -47,6 +47,150 @@ body {
 .links-navbar a {
   color: black;
 }
+.fill a,
+.stroke a {
+  position: relative;
+}
+
+.stroke a:after,
+.stroke a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #000000;
+  height: 1px;
+}
+
+.stroke a:hover:after {
+  width: 100%;
+}
+
+.stroke a:after {
+  text-align: left;
+  content: ".";
+  margin: 0;
+  opacity: 0;
+}
+.stroke a:hover {
+  color: #000000;
+  z-index: 1;
+}
+.stroke a:hover:after {
+  z-index: -10;
+  animation: fill 2s forwards;
+
+  opacity: 1;
+}
+
+.jello:hover {
+  animation-name: jello;
+  -webkit-animation-name: jello;
+  -moz-animation-name: jello;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  transform-origin: center;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+}
+.shakeFix:hover {
+  animation-name: shakefix;
+  -webkit-animation-name: shakefix;
+  -moz-animation-name: shakefix;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes shakefix {
+  0% {
+    transform: translate(1px, 1px);
+  }
+  10% {
+    transform: translate(-1px, -2px);
+  }
+  20% {
+    transform: translate(-3px, 0px);
+  }
+  30% {
+    transform: translate(3px, 2px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  50% {
+    transform: translate(-1px, 2px);
+  }
+  60% {
+    transform: translate(-3px, 1px);
+  }
+  70% {
+    transform: translate(3px, 1px);
+  }
+  80% {
+    transform: translate(-1px, -1px);
+  }
+  90% {
+    transform: translate(1px, 2px);
+  }
+  100% {
+    transform: translate(1px, -2px);
+  }
+}
+
+@keyframes jello {
+  from,
+  11.1%,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+}
+
+/* Keyframes */
+@keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+
+    background: #333;
+  }
+}
 
 .brand-icon {
   width: 177px;
@@ -64,6 +208,18 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+.hover01 {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.hover01:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .learning {
   position: absolute;
   top: 8px;
@@ -1007,6 +1163,19 @@ table td + td {
   flex-direction: column;
 }
 
+/* Animations  */
+
+div.borderYtoX a:before,
+div.borderYtoX a:after {
+  position: absolute;
+  opacity: 0.5;
+  height: 100%;
+  width: 2px;
+  content: "";
+  background: #fff;
+  transition: all 0.3s;
+}
+
 @media screen and (max-width: 1386px) {
   .mobile-dropdown {
     display: none;
@@ -1031,7 +1200,9 @@ table td + td {
   }
 
   .getStarted {
-    bottom: 200px;
+    position: fixed;
+    bottom: 130px;
+    left: 120px;
     margin: 0;
     background-color: #292f36;
     color: white;

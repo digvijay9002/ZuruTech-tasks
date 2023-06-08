@@ -8,6 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/contactUs.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,11 +18,11 @@
 
 <body>
     <header>
-        <nav class="brand-Navbar">
-            <div class="brand">
-                <img src="./images/Logo.png" class="brand-icon">
+        <nav class="brand-Navbar" data-aos="zoom-in" data-aos-delay="250" data-aos-duration="1000" data-aos-anchor-placement="center-center" data-aos-easing="ease-out-back">
+            <div class="brand"  data-aos="fade-down-right" data-aos-delay="90" data-aos-duration="1000">
+                <a href="./index.html"><img src="./images/Logo.png" class="brand-icon"></a>
             </div>
-            <div class="links-navbar">
+            <div class="links-navbar stroke">
                 <a href="./index.html">Home</a>
                 <a href="#">Pages</a>
                 <a href="./services.html">Services</a>
@@ -72,11 +73,11 @@
     <div class="wrapper">   
        
       
-                <div class="background-banner">
+                <div class="background-banner" data-aos="zoom-out" data-aos-delay="50" data-aos-duration="1000">
                 </div>
 
-                <div class="aboutUs-wrapper">
-                            <p>Contact Us</p>
+                <div class="aboutUs-wrapper" class="input-container" data-aos="flip-down" data-aos-delay="90" data-aos-duration="1000">
+                            <p >Contact Us</p>
                             <div class="Home-about-us">
                                 Home / Contact
                             </div>
@@ -84,7 +85,7 @@
                 </div>
 
                 <div class="quote-text-div">
-                    <p class="quote-text">
+                    <p class="quote-text" data-aos="slide-up" data-aos-delay="50" data-aos-duration="1000">
                         We love meeting new people and helping them.
 
 
@@ -96,7 +97,7 @@
         </div>  
 <br>
 
-<div class="contactUs-form">
+<div class="contactUs-form" data-aos="flip-up" data-aos-delay="90" data-aos-duration="1000">
     <div class="description-wrapper">
         <div class="description-wrapper-description">   
            <img src="./images/gmail-icon.png" class="description-icon"> info@yourdomain.com
@@ -120,21 +121,21 @@
 
     <div class="all-inputs">
    
-        <div class="input-container">
+        <div class="input-container" data-aos="zoom-in-left" data-aos-delay="90" data-aos-duration="1000">
 
             <input placeholder="Name" class="input-field" type="text">
             <input placeholder="Email" class="input-field" type="email">
         </div>
         
-        <div class="input-container">
+        <div class="input-container" class="input-container" data-aos="zoom-in-left" data-aos-delay="90" data-aos-duration="1000">
             <input placeholder="Subject" class="input-field2" type="text">
             <input placeholder="Phone" class="input-field2" type="email">
         </div>
         
-         <div class="txtarea-div">
+         <div class="txtarea-div" class="input-container" data-aos="zoom-in-left" data-aos-delay="90" data-aos-duration="1000">
              <input placeholder="Hello Iam Intrested in.. " class="input-field-textArea">
         </div>
-        <div class="btn-div">
+        <div class="btn-div" class="input-container" data-aos="flip-right" data-aos-delay="90" data-aos-duration="1000">
             <button class="sendNow-btn">
                     Send Now &nbsp;<i class="fa fa-arrow-right" style="color: #CDA274"></i>
             </button>
@@ -147,7 +148,7 @@
 
 </div>
 
-<div class="map-frame">
+<div class="map-frame" class="input-container" data-aos="zoom-in" data-aos-delay="90" data-aos-duration="1000" data-aos-easing="ease-out-back">
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.049066325073!2d72.53514561065553!3d23.021970581870036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84d7c856a59f%3A0x42b010008f715d0!2sZURU%20Tech%20India%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1684902232243!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 </iframe>
@@ -156,8 +157,8 @@
 
 <footer class="ft-main ft-container">
 
-    <div class="company-details">
-        <div class="ft-logo">
+    <div class="company-details" class="input-container" data-aos="fade-down-left" data-aos-delay="90" data-aos-duration="1000">
+        <div class="ft-logo" >
             <img src="./images/Logo.png"  class="ft-company-logo">
         </div>
 
@@ -174,7 +175,7 @@
 
         </div>
     </div>
-<div style="display: flex;" class="mobile-footer">
+<div style="display: flex;" class="mobile-footer" class="input-container" data-aos="fade-down-right" data-aos-delay="90" data-aos-duration="1000">
     <div class="ft-main-item" style="flex-shrink: 0;">
 
         <div class="footer-heading" >Pages </div>
@@ -230,7 +231,7 @@
 
 </div>
 
-<div class="ft-copyright">
+<div class="ft-copyright" >
 
     Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow
 </div>
@@ -251,5 +252,12 @@ function show() {
     }
 }
 </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once : false,
+
+        });
+      </script>
 </body>
 </html>

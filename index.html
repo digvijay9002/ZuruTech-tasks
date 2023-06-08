@@ -4,25 +4,32 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/fonts.css">
+   
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/homepage_1.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Document</title>
+    <title>Home</title>
 
 </head>
 
 <body>
     <header>
-        <nav class="brand-Navbar">
-            <div class="brand">
-                <img src="./images/Logo.png" class="brand-icon">
+        <nav class="brand-Navbar" data-aos="zoom-in" data-aos-delay="250" data-aos-duration="1000" data-aos-anchor-placement="center-center" data-aos-easing="ease-out-back"> 
+            <div class="brand shakeFix">
+               <a href="./index.html"> <img src="./images/Logo.png" class="brand-icon"></a>
             </div>
 
-            <div class="links-navbar">
+            <div class=" links-navbar stroke">
                 <a href="./index.html">Home</a>
                 <a href="#">Pages</a>
                 <a href="./services.html">Services</a>
@@ -74,10 +81,11 @@
 
 
 
-        <div>   
-                <img src="./images/Banner.png" class="imageDiv">
-        
-        <div class="banner-wrapper">
+        <div class="" data-aos="zoom-out" data-aos-delay="50" data-aos-duration="1000"  > 
+            <div class="blur-load">  
+                <img src="./images/Banner.png" class="imageDiv" loading="lazy">
+            </div>
+        <div class="banner-wrapper ">
             <div class="bannerText">
                     There are many variations of the passages of lorem Ipsum <br>
 
@@ -85,8 +93,8 @@
         
             </div>
 
-            <div class="button-wrapper">
-
+            <div class="" >
+              
                 <button class="getStarted">Get Started<i class="fa fa-arrow-right" style="color: #CDA274;"></i></button>
             </div>
 
@@ -95,8 +103,8 @@
         
 
     <div class="row">
-        <div class="column-text">
-            <p class="banner_1_content">Project Plan</p>
+        <div class="column-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100" data-aos-once="false" data-aos-easing="ease-out-back">
+            <p class="banner_1_content" >Project Plan</p>
             There are many versions of the passagees of lorem lpsum from available, majority.
          
             <a href="#">
@@ -105,7 +113,7 @@
         </div>
 
 
-        <div class="column-text">
+        <div class="column-text" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="100" data-aos-once="false" data-aos-easing="ease-out-back">
             <p class="banner_1_content">Interior Work</p>
             There are many variations of the passages of lorem Ipsum from 
             available, majority.
@@ -114,7 +122,7 @@
         </div>
 
 
-        <div class="column-text">
+        <div class="column-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100" data-aos-once="false" data-aos-easing="ease-out-back">
             <p class="banner_1_content">Realization</p>
             There are many variations of the passages of lorem Ipsum from 
             available, majority.
@@ -128,7 +136,8 @@
 
 <div class="living-stylish">
     
-    <div class="section2">
+    <div class="section2" data-aos="slide-left"  data-aos-delay="50"
+    data-aos-duration="1000"  data-aos-mirror="true"  data-aos-easing="ease-out-sine">
         <div class="heading1">
             We Create The Art
             Of Stylish Living
@@ -140,7 +149,7 @@
             that it has a more-or-less normal.
         </div>
 
-        <div class="Contact">
+        <div class="Contact" >
             <div class="">
             <img src="./images/Call.png" alt="Call" class="call_img">
         </div>
@@ -158,14 +167,15 @@
         </div>
     </div>
 
-    <div class="section2-image">
+    <div class="section2-image" data-aos="slide-up"  data-aos-delay="50"
+    data-aos-duration="1000"  data-aos-mirror="true" data-aos-once="false"    data-aos-easing="ease-out-back" >
         <img src="images/Image.png" class="photo1">
     </div>
 
     
 </div>
 
-    <div class="What">
+    <div class="What" data-aos="zoom-in-up" data-aos-delay="120" data-aos-once="false" data-aos-duration="800">
 
         <div class="whatPeople">
             What the People Thinks<br>
@@ -175,7 +185,7 @@
 
         <div class="grid-container">
 
-            <div class="people-wrapper">
+            <div class="people-wrapper" data-aos="zoom-in-left" data-aos-delay="120" data-aos-duration="800">
                 <div class="people-test">  
                     <img src="./images/test-1.png" class="personal">
                 
@@ -191,7 +201,7 @@
                     to make a type book.</div>
             </div>
 
-            <div class="people-wrapper">
+            <div class="people-wrapper" data-aos="zoom-in-up" data-aos-delay="120" data-aos-duration="800">
                 <div class="people-test">  
                     <img src="./images/test-2.png" class="personal">
                 
@@ -207,7 +217,7 @@
                     to make a type book.</div>
             </div>
 
-            <div class="people-wrapper">
+            <div class="people-wrapper" data-aos="zoom-in-right" data-aos-delay="120" data-aos-duration="800">
                 <div class="people-test">  
                     <img src="./images/test-3.png" class="personal">
                 
@@ -231,15 +241,15 @@
 
 
     <div class="client">
-            <img src="./images/logo1.svg" class="client-logo">
-            <img src="./images/logo2.svg" class="client-logo">
-            <img src="./images/logo3.svg" class="client-logo">
-            <img src="./images/logo4.svg" class="client-logo">
-            <img src="./images/logo5.svg"class="client-logo ">
+            <img src="./images/logo1.svg" class="client-logo" data-aos="slide-right" data-aos-delay="120" data-aos-duration="800">
+            <img src="./images/logo2.svg" class="client-logo" data-aos="slide-up" data-aos-delay="120" data-aos-duration="800">
+            <img src="./images/logo3.svg" class="client-logo" data-aos="slide-down" data-aos-delay="120" data-aos-duration="800">
+            <img src="./images/logo4.svg" class="client-logo" data-aos="slide-up" data-aos-delay="120" data-aos-duration="800">
+            <img src="./images/logo5.svg"class="client-logo " data-aos="slide-left" data-aos-delay="120" data-aos-duration="800">
 
     </div>
 
-    <div class="MoreProjects">
+    <div class="MoreProjects"  data-aos="zoom-in-up" data-aos-delay="120" data-aos-duration="800">
         <div class="follow-projects-heading">
         <p class="followProjects">
             Follow Our Projects
@@ -254,7 +264,7 @@
 
     <div class="align-grid">
         <div class="Projects">
-            <div>
+            <div  data-aos="flip-right" data-aos-delay="250" data-aos-duration="2500">
                 <img src="./images/kitchan1.png" alt="Kitchan1" class="Sample">
 
                 <div class="arrow-name-adjust">
@@ -279,7 +289,7 @@
             </div>
 
 
-            <div>
+            <div data-aos="flip-left" data-aos-delay="250" data-aos-duration="2500">
                 <img src="./images/kitchan2.png" alt="Kitchan2" class="Sample">
 
                 <div class="arrow-name-adjust">
@@ -305,7 +315,7 @@
         </div>
         
         <div class="Projects">
-            <div>
+            <div data-aos="flip-right" data-aos-delay="250" data-aos-duration="2500">
                 <img src="./images/kitchan3.png" alt="Kitchan3" class="Sample">
 
                 <div class="arrow-name-adjust">
@@ -329,7 +339,7 @@
                 </div>
             </div>
     
-            <div>
+            <div data-aos="flip-left" data-aos-delay="250" data-aos-duration="2500">
                 <div>
                 <img src="./images/kitchan4.png" alt="Kitchan4" class="Sample">
 
@@ -358,7 +368,7 @@
     </div>
 </div>
 </div>
-    <div class="counterDiv">
+    <div class="counterDiv" onmouseover="myFunction()">
         <!-- <table class="counter-table">
             <tr>
                 <td style="width: 25%;">
@@ -393,24 +403,32 @@
 
 
         </table> -->
-        <div class="counter-box">
+        <div class="counter-box" >
             <div class="counter-number">
-                <div class="">12</div> 
+                <div class="">
+                    <span class="num" data-val="12">00</span>
+                </div> 
                 <div class="counter-text">Years Of Experiance</div>   
              </div>
             
              <div class="counter-number">
-                <div class="">85</div> 
+                <div class="">
+                    <span class="num" data-val="85">00</span>
+                </div> 
                 <div class="counter-text">Success Project</div>   
              </div>
 
              <div class="counter-number">
-                <div class="">15</div> 
+                <div class="">
+                    <span class="num" data-val="15">00</span>
+                </div> 
                 <div class="counter-text">Active Project</div>   
              </div>
 
              <div class="counter-number-noborder">
-                <div class="">95</div> 
+                <div class="">
+                    <span class="num" data-val="95">00</span>
+                </div> 
                 <div class="counter-text">Happy CUstomers</div>   
              </div>
              
@@ -420,15 +438,15 @@
         </div>
     </div>
 
-<div class="article-div">
-    <div class="article-news-div">
-        <div class="article-heading">
+<div class="article-div" data-aos="zoom-in-up" data-aos-delay="250" data-aos-duration="1000">
+    <div class="article-news-div" >
+        <div class="article-heading" data-aos="slide-right" data-aos-delay="50" data-aos-duration="1500" >
 
             Articles & News
 
         </div>
 
-        <div class="article-description">
+        <div class="article-description" data-aos="slide-left" data-aos-delay="250" data-aos-duration="1000">
 
             It is a long established fact that a reader will be distracted by the of readable content
             <br>
@@ -443,7 +461,7 @@
         <div class="articles">
 
 
-            <div class="articles-wrapper">
+            <div class="articles-wrapper"  data-aos="slide-left" data-aos-delay="250" data-aos-duration="1200">
                 <img src="./images/article1.png" alt="article1" class="article-image">
                 <div class="image-text-wrapper">
                     
@@ -459,8 +477,8 @@
             </div>
         </div>
 
-        <div class="articles">
-            <div class="articles-wrapper-active">
+        <div class="articles" >
+            <div class="articles-wrapper-active"  data-aos="zoom-in" data-aos-delay="250" data-aos-duration="1200">
                 <img src="./images/article2.png" alt="article1" class="article-image">
                 <div class="articles-font">Low Cost Latest Invented Interior Designing
                     Ideas.</div>
@@ -475,7 +493,7 @@
         </div>
 
         <div class="articles">
-            <div class="articles-wrapper">
+            <div class="articles-wrapper"  data-aos="slide-right" data-aos-delay="250" data-aos-duration="1200">
                 <img src="./images/article3.png" alt="article1" class="article-image">
                 <div class="articles-font">Best For Any Office & Business Interior 
                     Solution</div>
@@ -494,9 +512,9 @@
     </div>
 </div>
 
-    <div class="contact-banner">
-        <div class="contact-banner-details">
-        <div class="contact-banner-heading">
+    <div class="contact-banner" data-aos="zoom-in-up" data-aos-delay="250" data-aos-once="false" data-aos-duration="1200" data-aos-once ="false">
+        <div class="contact-banner-details" >
+        <div class="contact-banner-heading" data-aos="slide-right" data-aos-delay="220" data-aos-once="false" data-aos-duration="1500" >
             Wanna join the interno?
         </div>
 
@@ -518,7 +536,7 @@
 
     
 
-        <footer class="ft-main ft-container">
+        <footer class="ft-main ft-container" data-aos="slide-up" data-aos-delay="350" data-aos-duration="1500">
 
             <div class="company-details">
                 <div class="ft-logo">
@@ -594,11 +612,11 @@
 
    
 
-    <div class="ft-copyright">
+    <div class="ft-copyright" data-aos="zoom-in-up" data-aos-delay="350" data-aos-duration="1500">
 
         Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow
     </div>
-
+    
     <script>
         var div = document.getElementById('mobile-dropdown');
         var display = 0;
@@ -619,6 +637,16 @@
     
     
     </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once : false,
+
+        });
+      </script>
+
+    <script src="./js/index.js"></script>
 
 
 </body>

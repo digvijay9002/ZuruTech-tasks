@@ -47,6 +47,60 @@
 .links-navbar a {
   color: black;
 }
+.fill a,
+.stroke a {
+  position: relative;
+}
+
+.stroke a:after,
+.stroke a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #000000;
+  height: 1px;
+}
+
+.stroke a:hover:after {
+  width: 100%;
+}
+
+.stroke a:after {
+  text-align: left;
+  content: ".";
+  margin: 0;
+  opacity: 0;
+}
+.stroke a:hover {
+  color: #000000;
+  z-index: 1;
+}
+.stroke a:hover:after {
+  z-index: -10;
+  animation: fill 2s forwards;
+
+  opacity: 1;
+}
+@keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+
+    background: #333;
+  }
+}
 .logo {
   float: left;
   display: flex;
